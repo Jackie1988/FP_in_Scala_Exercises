@@ -67,4 +67,33 @@ println("Drop While Exercise")
 dropWhile(alist)(x ⇒ x < 2)
 
 
+//Exercise 3.5
+def setHead[A](l: List[A], newHead: A): List[A] =
+l match {
+  case Nil ⇒ Nil
+  case Cons(h, t) ⇒ Cons(newHead, t)
+}
+
+
+val list = List("one", "two", "three")
+
+setHead(list, "1")
+
+
+//Exercise 3.6
+def init[A](l: List[A]): List[A] =
+l match {
+  case Nil ⇒ Nil
+  case Cons(h, Nil) ⇒ Nil
+  case Cons(h, t) ⇒ Cons(h, init(t))
+}
+
+init(list)
+
+
+
+
+
+
+
 
